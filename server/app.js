@@ -6,7 +6,7 @@ const authRoutes = require('./routes/auth');
 
 const app = express();
 const PORT = 3000;
-const MONGO_URI = 'your_mongo_connection_string'; // Replace with your MongoDB connection string
+const MONGO_URI = 'mongodb://localhost:27017'; 
 
 // Middleware
 app.use(cors());
@@ -16,9 +16,13 @@ app.use(bodyParser.json());
 app.use('/auth', authRoutes);
 
 // MongoDB Connection
-mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MONGO_URI)
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('MongoDB connection error:', err));
+
+
+// Routes
+app.use('/auth', authRoutes);
 
 // Start server
 app.listen(PORT, () => {

@@ -1,32 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume Builder</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="resume_builder_style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Resume Builder</h1>
-        <button onclick="downloadPDF()">Download as PDF</button>
-    </header>
-    <main>
-        <form id="resume-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
-
-            <label for="skills">Skills:</label>
-            <textarea id="skills" name="skills"></textarea><br>
-
-            <button type="button" onclick="generateResume()">Preview Resume</button>
-        </form>
-        <div id="resume-preview">
+      <div class="main_heading">
+        <a href="index.html" class="header">AIInterviewEdge</a>
+        <div class="icon-text-container">
+          <img
+            src="./assets/curriculum-vitae.png"
+            alt="Template Icon"
+            class="icon"
+          />
+          <a href="templates.html">Templates</a>
         </div>
-    </main>
-    <script src="script.js"></script>
-</body>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="section">
+        <h2>About Section</h2>
+        <form id="aboutForm">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" placeholder="e.g. Ajinkya" />
+          </div>
+          <div class="form-group">
+            <label for="middleName">Middle Name (optional)</label>
+            <input type="text" id="middleName" placeholder="e.g. Herbert" />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="e.g. Doe" />
+          </div>
+          <div class="form-group">
+            <label for="image">Your Image</label>
+            <input type="file" id="image" />
+          </div>
+          <div class="form-group">
+            <label for="designation">Designation</label>
+            <input
+              type="text"
+              id="designation"
+              placeholder="e.g. Sr. Accountant"
+            />
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              id="address"
+              placeholder="e.g. Lake Street - 23"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="e.g. johndoe@gmail.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone No.</label>
+            <input
+              type="text"
+              id="phone"
+              placeholder="e.g. 456-768-798, 567-654-002"
+            />
+          </div>
+          <div class="form-group">
+            <label for="summary">Summary</label>
+            <input
+              type="text"
+              id="summary"
+              placeholder="e.g. Brief description"
+            />
+          </div>
+        </form>
+      </div>
+
+      <div class="section">
+        <h2>Achievements</h2>
+        <form id="achievementsForm">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              id="title"
+              placeholder="e.g. Achievement Title"
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input
+              type="text"
+              id="description"
+              placeholder="e.g. Brief description"
+            />
+          </div>
+          <button class="addData">+</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      let button = document.querySelector(".addData");
+      button.addEventListener("click", function() {
+        let form = document.getElementById("achievementsForm");
+      });
+    </script>
+
+    <script
+      src="https://kit.fontawesome.com/4840da7391.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

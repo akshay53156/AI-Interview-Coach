@@ -133,6 +133,18 @@ footer {
     }
 }
 
+@media screen and (max-width: 425px){
+    .hero_section {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+
+    .resume_buildSection {
+        padding: 1rem;
+    }
+}
+
 .boxContent {
     padding: 0.2rem;
 }

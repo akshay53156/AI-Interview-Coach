@@ -1,157 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup and Login Form</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background-color: #f4f4f4;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
 
-      .container {
-        width: 350px;
-        background-color: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
+        .container {
+            width: 350px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-      h2 {
-        text-align: center;
-        margin-bottom: 1rem;
-      }
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
 
-      form {
-        display: flex;
-        flex-direction: column;
-      }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
 
-      label {
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-      }
+        label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
 
-      input {
-        margin-bottom: 1rem;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
+        input {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-      button {
-        padding: 0.7rem;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
+        button {
+            padding: 0.7rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-      button:hover {
-        background-color: #0056b3;
-      }
+        button:hover {
+            background-color: #0056b3;
+        }
 
-      .toggle-btn {
-        margin-top: 1rem;
-        text-align: center;
-        color: #007bff;
-        cursor: pointer;
-      }
+        .toggle-btn {
+            margin-top: 1rem;
+            text-align: center;
+            color: #007bff;
+            cursor: pointer;
+        }
 
-      .toggle-btn:hover {
-        text-decoration: underline;
-      }
+        .toggle-btn:hover {
+            text-decoration: underline;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container">
-      <h2 id="form-title">Signup</h2>
+        <h2 id="form-title">Signup</h2>
 
-      <!-- Signup Form -->
-      <form id="signup-form">
-        <label for="name">Full Name</label>
-        <input
-          type="text"
-          id="name"
-          placeholder="Enter your full name"
-          required
-        />
+        <!-- Signup Form -->
+        <form id="signup-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your full name" required />
 
-        <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Enter your email"
-          required
-        />
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required />
 
-        <label for="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Enter your password"
-          required
-        />
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required />
 
-        <button type="submit">Signup</button>
-      </form>
+            <button type="submit">Signup</button>
+        </form>
 
-      <!-- Toggle between forms -->
-      <div class="toggle-btn" id="toggle-form">
-        Already have an account? Login
-      </div>
+        <!-- Toggle between forms -->
+        <div class="toggle-btn" id="toggle-form">
+            Already have an account? Login
+        </div>
     </div>
 
     <script>
-      const signupForm = document.getElementById("signup-form");
-      const toggleForm = document.getElementById("toggle-form");
+        const signupForm = document.getElementById("signup-form");
+        const toggleForm = document.getElementById("toggle-form");
 
-      // When "Already have an account?" is clicked
-      toggleForm.addEventListener("click", () => {
-        // Redirect to login.html
-        window.location.href = "login.html";
-      });
+        // When "Already have an account?" is clicked
+        toggleForm.addEventListener("click", () => {
+            // Redirect to login.html
+            window.location.href = "login.html";
+        });
 
-      // Add basic form submission handling (optional)
-      signupForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+        // Add basic form submission handling (optional)
+        signupForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
 
-        // For now, just log the input (you can integrate backend here)
-        console.log("Signup Successful:", { name, email, password });
-        alert("Signup Successful!");
-        // Reset form inputs
-        signupForm.reset();
-        // Redirect to home page (replace with your desired page)
-        window.location.href = `login.html?email=${encodeURIComponent(email)}`;
+            // For now, just log the input (you can integrate backend here)
+            console.log("Signup Successful:", { name, email, password });
+            alert("Signup Successful!");
+            // Reset form inputs
+            signupForm.reset();
+            // Redirect to home page (replace with your desired page)
+            window.location.href = `login.html?email=${encodeURIComponent(email)}`;
 
-        async function signup() {
+            async function signup() {
 
-          const response = await fetch("http://localhost:3000/auth/signup", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, email, password }),
-          });
+                const response = await fetch("http://localhost:3000/auth/signup", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username, email, password }),
+                });
 
-          const data = await response.json();
-          if (response.ok) {
-            alert("Signup successful");
-          } else {
-            alert(`Error: ${data.error}`);
-          }
-        }
+                const data = await response.json();
+                if (response.ok) {
+                    alert("Signup successful");
+                } else {
+                    alert(`Error: ${data.error}`);
+                }
+            }
 
-        signup();
-      });
+            signup();
+        });
     </script>
-  </body>
+</body>
+
 </html>
